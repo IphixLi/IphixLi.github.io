@@ -16,7 +16,7 @@ My name is Iphigenie Bera and I can't wait to share my knowledge, learning journ
 
 I am interested in everything data: data engineering, data science, data analytics and software engineering. I believe in the power of data in making sound decisions and optimizing resources.
 
-I will post articles about my  computer science journey in [articles](https://iphixli.github.io/articles/). you can look at my resume from navigation bar [resume](https://iphixli.github.io/resume). I will document by projects with code snippets and demos, if applicable in [projects](https://iphixli.github.io/projects). Feel free to browse my posts my tags [tags](https://iphixli.github.io/tags) or [categories](https://iphixli.github.io/categories) or track past post in the [archives](https://iphixli.github.io/archives).
+I will post articles about projects with code snippets and demos, if applicable in [Projects](https://iphixli.github.io/categories) category. you can look at my resume from navigation bar [resume](https://iphixli.github.io/Bera_resumesummer2022.pdf). Feel free to browse my posts by tags or category  or track past post in the [archives](https://iphixli.github.io/archives). you can also search for posts containing specific key word from search tool in the navigation bar.
 
 you can reach out to me on [Github](https://github.com/IphixLi) or [linkedIn](https://www.linkedin.com/in/berami/). 
 
