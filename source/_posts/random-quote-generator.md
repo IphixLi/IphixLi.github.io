@@ -10,6 +10,8 @@ toc: true
 cover: /gallery/random.png
 thumbnail: /gallery/random.png
 ---
+A react app that generate random quotes from an API as the user clicks on the button.
+<!-- more -->
 ## Introduction
 React is one of powerful frontend frameworks when it comes to state management. Developed by Meta (former Facebook), React have an in-built state object which seamlessly manages display of your webapp according to interactions with your application.
 

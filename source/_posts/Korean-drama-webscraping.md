@@ -18,6 +18,7 @@ thumbnail: /gallery/hosplaylist.jpg
 <p class="not-gallery-item" style="font-size:13px" align="center"><em>(on the cover) Hospital Playlist</em></p>
 
 <em>TLDR: I made a list of korean Dramas with rankings and other cool descriptors for each drama</em>
+<!-- more -->
 
 ## Introduction
 
