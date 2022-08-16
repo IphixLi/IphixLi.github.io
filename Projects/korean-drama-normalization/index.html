@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta><title>Korean drama Normalization - BERA LOGS</title><link rel="manifest" href="/manifest.json"><meta name="theme-color" content="#f7f7f7"><meta name="application-name" content="Iphigenie Bera"><meta name="msapplication-TileImage" content="https://avatars.githubusercontent.com/u/84729199?s=400&amp;u=7d8faf6aeb2c7790f9770f718609c65eb5278114&amp;v=4"><meta name="msapplication-TileColor" content="#f7f7f7"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="Iphigenie Bera"><meta name="apple-mobile-web-app-status-bar-style" content="default"><meta name="description" content="(on the cover) My Liberation Notes TLDR: I normalized korean drama list dataset for easy querying and accessibility. I created individual genres,tags,platforms,aired_on, and imdb tables to eliminate a"><meta property="og:type" content="blog"><meta property="og:title" content="Korean drama Normalization"><meta property="og:url" content="https://iphixli.github.io/Projects/korean-drama-normalization/"><meta property="og:site_name" content="BERA LOGS"><meta property="og:description" content="(on the cover) My Liberation Notes TLDR: I normalized korean drama list dataset for easy querying and accessibility. I created individual genres,tags,platforms,aired_on, and imdb tables to eliminate a"><meta property="og:locale" content="en_US"><meta property="og:image" content="https://iphixli.github.io/gallery/liberation_notes.jpg"><meta property="article:published_time" content="2022-08-16T18:06:24.000Z"><meta property="article:author" content="Bera Iphigenie"><meta property="article:tag" content="data engineering"><meta property="article:tag" content="k-drama"><meta property="article:tag" content="Data normalization"><meta property="article:tag" content="sql"><meta property="article:tag" content="databases"><meta property="twitter:card" content="summary"><meta property="twitter:image:src" content="https://iphixli.github.io/gallery/liberation_notes.jpg"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://iphixli.github.io/Projects/korean-drama-normalization/"},"headline":"Korean drama Normalization","image":["https://iphixli.github.io/gallery/liberation_notes.jpg"],"datePublished":"2022-08-16T18:06:24.000Z","author":{"@type":"Person","name":"Bera Iphigenie"},"publisher":{"@type":"Organization","name":"BERA LOGS","logo":{"@type":"ImageObject","url":"https://iphixli.github.io/Projects/korean-drama-normalization/"}},"description":"(on the cover) My Liberation Notes TLDR: I normalized korean drama list dataset for easy querying and accessibility. I created individual genres,tags,platforms,aired_on, and imdb tables to eliminate a"}</script><link rel="canonical" href="https://iphixli.github.io/Projects/korean-drama-normalization/"><link rel="icon" href="https://avatars.githubusercontent.com/u/84729199?s=400&amp;u=7d8faf6aeb2c7790f9770f718609c65eb5278114&amp;v=4"><link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/atom-one-dark.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;600&amp;family=Source+Code+Pro"><link rel="stylesheet" href="/css/default.css"><style>body>.footer,body>.navbar,body>.section{opacity:0}</style><!--!--><!--!--><!--!--><!--!--><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.10.0/dist/css/lightgallery.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.8.1/dist/css/justifiedGallery.min.css"><!--!--><!--!--><style>.pace{-webkit-pointer-events:none;pointer-events:none;-webkit-user-select:none;-moz-user-select:none;user-select:none}.pace-inactive{display:none}.pace .pace-progress{background:#3273dc;position:fixed;z-index:2000;top:0;right:100%;width:100%;height:2px}</style><script src="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/pace.min.js"></script><!--!--><!--!--><!-- hexo injector head_end start --><script>
+  (function () {
+      function switchTab() {
+          if (!location.hash) {
+            return;
+          }
+          Array
+              .from(document.querySelectorAll('.tab-content'))
+              .forEach($tab => {
+                  $tab.classList.add('is-hidden');
+              });
+          Array
+              .from(document.querySelectorAll('.tabs li'))
+              .forEach($tab => {
+                  $tab.classList.remove('is-active');
+              });
+          const $activeTab = document.querySelector(location.hash);
+          if ($activeTab) {
+              $activeTab.classList.remove('is-hidden');
+          }
+          const $tabMenu = document.querySelector(`a[href="${location.hash}"]`);
+          if ($tabMenu) {
+              $tabMenu.parentElement.classList.add('is-active');
+          }
+      }
+      switchTab();
+      window.addEventListener('hashchange', switchTab, false);
+  })();
+  </script><!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.2.0"></head><body class="is-2-column"><nav class="navbar navbar-main"><div class="container navbar-container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/">BERA LOGS</a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/">Home</a><a class="navbar-item" href="/about">About</a><a class="navbar-item" href="/archives">Archives</a><a class="navbar-item" href="/categories">Categories</a><a class="navbar-item" href="/Bera_resumesummer2022.pdf">Resume</a></div><div class="navbar-end"><a class="navbar-item" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/IphixLi"><i class="fab fa-github"></i></a><a class="navbar-item is-hidden-tablet catalogue" title="Catalogue" href="javascript:;"><i class="fas fa-list-ul"></i></a><a class="navbar-item search" title="Search" href="javascript:;"><i class="fas fa-search"></i></a></div></div></div></nav><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-8-tablet is-8-desktop is-8-widescreen"><div class="card"><div class="card-image"><span class="image is-7by3"><img class="fill" src="/gallery/liberation_notes.jpg" alt="Korean drama Normalization"></span></div><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item">Posted&nbsp;<time dateTime="2022-08-16T18:06:24.000Z" title="8/16/2022, 1:06:24 PM">2022-08-16</time></span><span class="level-item"><a class="link-muted" href="/categories/Projects/">Projects</a></span><span class="level-item">6 minutes read (About 943 words)</span></div></div><h1 class="title is-3 is-size-4-mobile">Korean drama Normalization</h1><div class="content"><p class="not-gallery-item" style="font-size:13px" align="center"><em>(on the cover) My Liberation Notes</em></p>
+<em>TLDR: I normalized korean drama list dataset for easy querying and accessibility. I created individual genres,tags,platforms,aired_on, and imdb tables to eliminate arrays in table.</em>
+<span id="more"></span>
+In RDMBS design, usability plays a big role in data modeling. You have to consider the data stakeholders involved and their use case such as how frequently queries will be performed, new data instances will be inserted, updated or deleted. Data normalization serves this purpose.
+
+<p>Nested elements and list elements in RDBMS are notoriously difficult to query. Most of the time, there is not-so-pretty destructuring and joins along the way just to make a simple query on elements with compound data types such as arrays which ends up making querying and updating compound entries take a lot of computing time and resources.</p>
+<p>Let’s take a look at a part of kdrama list.
+<em>full kdramalist on <a target="_blank" rel="noopener" href="https://www.kaggle.com/datasets/iphigeniebera/korean-drama-list-about-740-unique-dramas">kaggle</a></em>
+Let’s say you want to access drama names with ‘law’ in genres. The solution would be to check if each entry  have ‘law’ in its Genres attribute. Time complexity of this would be O(n^2) which would make even relational data models useless (this is no different than if statements in programming languages like python).</p>
+<p align="center" class="mb-2">
+<img class="not-gallery-item" style="width:70%;height:70%" src="https://iphixli.github.io/gallery/kdrama_part.png">
+</p>
+
+<p>Also parsing different file types into sql statements becomes a challenge for compound datatypes such as lists in csv. Csv by default  stores elements as strings, so lists become strings, and straight forward queries such as indexing access are a challenge if not even impossible without string manipulation preprocessing.</p>
+<p>Also for convenience to people who accessesses your date, it is better to keep a table at atomic level for each cell and provide structure for altering and accessing data without necessarily understanding the whole structure of data artifact or tampering data intergrity, this is where data normalization comes into play</p>
+<p>According to <a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Database_normalization">wikipedia</a>,</p>
+<p>“Database normalization is the process of restructuring a relational database in accordance with a series of so-called normal forms in order to reduce data redundancy and improve data integrity. It was first proposed by Edgar F. Codd as an integral part of his relational model. This leads to the creation of duplicate values and multiple tables.</p>
+<p>There are many types of normalization but the most commonly used are 3.</p>
+<p><strong>First normal form (1NF)</strong>: requires that a table satisfies the following conditions: </p>
+<ul>
+<li>There is duplicated data: no two rows have same values for each attribute.</li>
+<li>All columns are “regular” with no hidden values: this means that each cell contains a single value.
+1NF normalization created atomic values however can lead to creation of lots of rows as you need to account for possible combinations in case of multiple values destructuring.</li>
+</ul>
+<p>For example, 1NF of kdramalist table would look like this:</p>
+<p align="center" class="mb-2">
+<img class="not-gallery-item" style="width:70%;height:70%" src="https://iphixli.github.io/gallery/firstNdramas.png">
+</p>
+
+<p>Notice how permutations between tags, aired on and actors attributes. While this gives us a single element for each cell, we end up getting a large number of rows. For the kdrama list which had about 743 rows, 1NF led to ~510,000 rows, about 650  times the original list. Imagine if we had an extensive number of tags, genres for each kdrama, we can jump to gigabyte file in instant, oof!!!!.  This is not to mention if you need to update an attribute in this kind of table, copying over elements and checking for duplicates would be a nightmare. This is where the second normal form comes for a save.</p>
+<p><strong>Second normal form (2NF)</strong>: An entity is in a second normal form if all of its attributes depend on the whole primary key. So this means that the values in the different columns have a dependency on the other columns.</p>
+<ul>
+<li>The table must be already in 1 NF and all non-key columns of the tables must depend on the PRIMARY KEY.</li>
+<li>The partial dependencies are removed and placed in a separate table.</li>
+</ul>
+<p>2NF strictly guides us to keep only columns which depend on primary keys and keep others in separate tables. This is why we have created additional tables: actors, genres, tags, platforms, aired_on, imdb and one table main_descriptors containing attributes that depend on the primary key, imdb_name. To enforce primary keys on  actors, genres, tags, platforms, aired_on, and imdb tables, one can create composite keys using sql.</p>
+<p><strong>Third normal form (3NF)</strong>: you should eliminate fields in a table that do not depend on the key.</p>
+<ul>
+<li>A Table is already in 2 NF</li>
+<li>Non-Primary key columns shouldn’t depend on the other non-Primary key columns</li>
+<li>There is no transitive functional dependency.
+If A-&gt;B and B-&gt;C are the two functional dependencies, then A-&gt;C is called the Transitive Dependency. Our current tables satisfy the above conditions therefore all of them are in 3rd normal form.</li>
+</ul>
+<p>Main_descriptors actors, genres,tags,platforms,aired_on, and imdb tables can be found in <a target="_blank" rel="noopener" href="https://www.kaggle.com/datasets/iphigeniebera/korean-drama-list-about-740-unique-dramas">Kaggle</a>. and this <a target="_blank" rel="noopener" href="https://github.com/IphixLi/kdrama_project">github repo</a> under normalized_tables folder and generating code in normalizing.py.</p>
+<p> you can read on  how korean drama dataset was generated by webscraping in this <a href="https://iphixli.github.io/Projects/korean-drama-webscraping/">post</a>.</p>
+<hr>
+<p><em>This data normalization project is part of Kdrama project in which I practice my data science and engineering skills, step by step until I achieve highly accurate model for recommending korean drama.</em></p>
+<p>you can watch projects associated with k-drama projects by following <a href="https://iphixli.github.io/tags/k-drama/">k-drama tag</a></p>
+</div><div class="article-licensing box"><div class="licensing-title"><p>Korean drama Normalization</p><p><a href="https://iphixli.github.io/Projects/korean-drama-normalization/">https://iphixli.github.io/Projects/korean-drama-normalization/</a></p></div><div class="licensing-meta level is-mobile"><div class="level-left"><div class="level-item is-narrow"><div><h6>Author</h6><p>Bera Iphigenie</p></div></div><div class="level-item is-narrow"><div><h6>Posted on</h6><p>2022-08-16</p></div></div><div class="level-item is-narrow"><div><h6>Licensed under</h6><p><a class="icons" rel="noopener" target="_blank" title="Creative Commons" href="https://creativecommons.org/"><i class="icon fab fa-creative-commons"></i></a><a class="icons" rel="noopener" target="_blank" title="Attribution" href="https://creativecommons.org/licenses/by/4.0/"><i class="icon fab fa-creative-commons-by"></i></a><a class="icons" rel="noopener" target="_blank" title="Noncommercial" href="https://creativecommons.org/licenses/by-nc/4.0/"><i class="icon fab fa-creative-commons-nc"></i></a></p></div></div></div></div></div><div class="article-tags is-size-7 mb-4"><span class="mr-2">#</span><a class="link-muted mr-2" rel="tag" href="/tags/data-engineering/">data engineering</a><a class="link-muted mr-2" rel="tag" href="/tags/k-drama/">k-drama</a><a class="link-muted mr-2" rel="tag" href="/tags/Data-normalization/">Data normalization</a><a class="link-muted mr-2" rel="tag" href="/tags/sql/">sql</a><a class="link-muted mr-2" rel="tag" href="/tags/databases/">databases</a></div><div class="sharethis-inline-share-buttons"></div><script src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-62f30acb0a28e668" defer></script></article></div><!--!--><nav class="post-navigation mt-4 level is-mobile"><div class="level-end"><a class="article-nav-next level level-item link-muted" href="/Projects/korean-drama-webscraping/"><span class="level-item">Korean drama webscraping</span><i class="level-item fas fa-chevron-right"></i></a></div></nav><!--!--></div><div class="column column-left is-4-tablet is-4-desktop is-4-widescreen  order-1"><div class="card widget" data-type="profile"><div class="card-content"><nav class="level"><div class="level-item has-text-centered flex-shrink-1"><div><figure class="image is-128x128 mx-auto mb-2"><img class="avatar is-rounded" src="https://avatars.githubusercontent.com/u/84729199?s=400&amp;u=7d8faf6aeb2c7790f9770f718609c65eb5278114&amp;v=4" alt="Iphigenie Bera"></figure><p class="title is-size-4 is-block" style="line-height:inherit;">Iphigenie Bera</p><p class="is-size-6 is-block">Computer Science</p><p class="is-size-6 is-flex justify-content-center"><i class="fas fa-map-marker-alt mr-1"></i><span>Evanston,Illinois</span></p></div></div></nav><nav class="level is-mobile"><div class="level-item has-text-centered is-marginless"><div><p class="heading">Posts</p><a href="/archives"><p class="title">5</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">Categories</p><a href="/categories"><p class="title">2</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">Tags</p><a href="/tags"><p class="title">14</p></a></div></div></nav><div class="level"><a class="level-item button is-primary is-rounded" href="https://github.com/IphixLi" target="_blank" rel="noopener">Follow</a></div><div class="level is-mobile is-multiline"><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Github" href="https://github.com/IphixLi"><i class="fab fa-github"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="linkedIn" href="https://www.linkedin.com/in/berami/"><i class="fab fa-linkedin"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Instagram" href="https://www.instagram.com/bera_iphix/"><i class="fab fa-instagram"></i></a></div></div></div><!--!--><div class="card widget" data-type="categories"><div class="card-content"><div class="menu"><h3 class="menu-label">Categories</h3><ul class="menu-list"><li><a class="level is-mobile" href="/categories/Other/"><span class="level-start"><span class="level-item">Other</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/Projects/"><span class="level-start"><span class="level-item">Projects</span></span><span class="level-end"><span class="level-item tag">4</span></span></a></li></ul></div></div></div><div class="card widget" data-type="links"><div class="card-content"><div class="menu"><h3 class="menu-label">Links</h3><ul class="menu-list"><li><a class="level is-mobile" href="https://www.kaggle.com/iphigeniebera" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">Kaggle</span></span><span class="level-right"><span class="level-item tag">www.kaggle.com</span></span></a></li></ul></div></div></div></div><!--!--></div></div></section><footer class="footer"><div class="container"><div class="level"><div class="level-start"><a class="footer-logo is-block mb-2" href="/">BERA LOGS</a><p class="is-size-7"><span>&copy; 2022 Bera Iphigenie</span>  Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> &amp; <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a></p></div><div class="level-end"><div class="field has-addons"><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Creative Commons" href="https://creativecommons.org/"><i class="fab fa-creative-commons"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Attribution 4.0 International" href="https://creativecommons.org/licenses/by/4.0/"><i class="fab fa-creative-commons-by"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/ppoffice/hexo-theme-icarus"><i class="fab fa-github"></i></a></p></div></div></div></div></footer><script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script><script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script><script>moment.locale("en");</script><script>var IcarusThemeSettings = {
+            article: {
+                highlight: {
+                    clipboard: true,
+                    fold: 'unfolded'
+                }
+            }
+        };</script><script src="/js/column.js"></script><script src="/js/animation.js"></script><a id="back-to-top" title="Back to top" href="javascript:;"><i class="fas fa-chevron-up"></i></a><script src="/js/back_to_top.js" defer></script><!--!--><!--!--><!--!--><script src="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.js" defer></script><script>window.addEventListener("load", () => {
+      window.cookieconsent.initialise({
+        type: "info",
+        theme: "edgeless",
+        static: false,
+        position: "bottom-left",
+        content: {
+          message: "This website uses cookies to improve your experience.",
+          dismiss: "Got it!",
+          allow: "Allow cookies",
+          deny: "Decline",
+          link: "Learn more",
+          policy: "Cookie Policy",
+          href: "https://www.cookiesandyou.com/",
+        },
+        palette: {
+          popup: {
+            background: "#edeff5",
+            text: "#838391"
+          },
+          button: {
+            background: "#4b81e8"
+          },
+        },
+      });
+    });</script><script src="https://cdn.jsdelivr.net/npm/lightgallery@1.10.0/dist/js/lightgallery.min.js" defer></script><script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.8.1/dist/js/jquery.justifiedGallery.min.js" defer></script><script>window.addEventListener("load", () => {
+            if (typeof $.fn.lightGallery === 'function') {
+                $('.article').lightGallery({ selector: '.gallery-item' });
+            }
+            if (typeof $.fn.justifiedGallery === 'function') {
+                if ($('.justified-gallery > p > .gallery-item').length) {
+                    $('.justified-gallery > p > .gallery-item').unwrap();
+                }
+                $('.justified-gallery').justifiedGallery();
+            }
+        });</script><!--!--><!--!--><!--!--><!--!--><!--!--><script src="/js/main.js" defer></script><div class="searchbox"><div class="searchbox-container"><div class="searchbox-header"><div class="searchbox-input-container"><input class="searchbox-input" type="text" placeholder="Type something..."></div><a class="searchbox-close" href="javascript:;">×</a></div><div class="searchbox-body"></div></div></div><script src="/js/insight.js" defer></script><script>document.addEventListener('DOMContentLoaded', function () {
+            loadInsight({"contentUrl":"/content.json"}, {"hint":"Type something...","untitled":"(Untitled)","posts":"Posts","pages":"Pages","categories":"Categories","tags":"Tags"});
+        });</script></body></html>
