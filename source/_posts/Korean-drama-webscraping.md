@@ -38,6 +38,15 @@ MyDramalist is a website containing a  variety of asian dramas and movies with e
 
 I webscraped Korean drama list from wikipedia gaining about 1500 korean dramas.
 
+the first step in every webscraping is understanding structur of page source. you can do that by right-click and opening   inspect for a localized area of view page source for viewing the whole page.
+this helps to know how data of interest in encapsuled in html tags and detecting patterns.
+
+in wikipedia, list of dramas were in ul tags
+<p align="center" class="mb-2">
+<img class="not-gallery-item" style="width:100%;height:80%" src="https://iphixli.github.io/gallery/wikidrama.png">
+</p>
+<em>how to inspect page source</em>
+
 ```python
 from bs4 import BeautifulSoup
 import requests

@@ -205,7 +205,7 @@ search:
 share:
     type: sharethis
     # URL to the ShareThis share plugin script
-    install_url: "//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-62f30acb0a28e668"
+    install_url: //s7.addthis.com/js/300/addthis_widget.js#pubid=ra-62f30acb0a28e668
 # Sidebar configurations.
 # Please be noted that a sidebar is only visible when it has at least one widget
 sidebar:
