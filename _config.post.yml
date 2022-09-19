@@ -2,35 +2,35 @@
 # http://ppoffice.github.io/hexo-theme-icarus/categories/Widgets/
 widgets:
     # Profile widget configurations
-    -
+    #-
         # Where should the widget be placed, left sidebar or right sidebar
-        position: left
-        type: profile
+        # position: left
+        # type: profile
         # Author name
-        author: Iphigenie Bera
+        # author: Iphigenie Bera
         # Author title
-        author_title: Computer Science
+        # author_title: Computer Science
         # Author's current location
-        location: Evanston,Illinois
+        # location: Evanston,Illinois
         # URL or path to the avatar image
-        avatar: https://avatars.githubusercontent.com/u/84729199?s=400&u=7d8faf6aeb2c7790f9770f718609c65eb5278114&v=4
+        # avatar: https://avatars.githubusercontent.com/u/84729199?s=400&u=7d8faf6aeb2c7790f9770f718609c65eb5278114&v=4
         # Whether show the rounded avatar image
-        avatar_rounded: true
+        #avatar_rounded: true
         # Email address for the Gravatar
-        gravatar: 
+        # gravatar: 
         # URL or path for the follow button
-        follow_link: https://github.com/IphixLi
+        # follow_link: https://github.com/IphixLi
         # Links to be shown on the bottom of the profile widget
-        social_links:
-            Github:
-                icon: fab fa-github
-                url: https://github.com/IphixLi
-            linkedIn:
-                icon: fab fa-linkedin
-                url: https://www.linkedin.com/in/berami/
-            Instagram:
-                icon: fab fa-instagram
-                url: https://www.instagram.com/bera_iphix/
+        # social_links:
+            # Github:
+                # icon: fab fa-github
+                # url: https://github.com/IphixLi
+            # linkedIn:
+                # icon: fab fa-linkedin
+                # url: https://www.linkedin.com/in/berami/
+            # Instagram:
+                # icon: fab fa-instagram
+                # url: https://www.instagram.com/bera_iphix/
     # Table of contents widget configurations
     -
         # Where should the widget be placed, left sidebar or right sidebar
@@ -39,21 +39,21 @@ widgets:
         # Whether to show the index of each heading
         index: true
         # Whether to collapse sub-headings when they are out-of-view
-        collapsed: true
+        collapsed: false
         # Maximum level of headings to show (1-6)
-        depth: 3
+        depth: 12
     # Categories widget configurations
-    -
+    # -
         # Where should the widget be placed, left sidebar or right sidebar
-        position: left
-        type: categories
+        # position: left
+        # type: categories
     # Recommendation links widget configurations
-    -
+    # -
         # Where should the widget be placed, left sidebar or right sidebar
-        position: left
-        type: links
+        # position: left
+        # type: links
         # Names and URLs of the sites
-        links:
-            Kaggle: https://www.kaggle.com/iphigeniebera
+        # links:
+            # Kaggle: https://www.kaggle.com/iphigeniebera
 
      

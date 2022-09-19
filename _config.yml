@@ -95,6 +95,5 @@ deploy:
 marked:
   gfm: true
   breaks: false
-
 githubEmojis:
   className: not-gallery-item
