@@ -27,35 +27,31 @@
       display:flex;
       flex-direction:row;
       justify-content:space-between;
+      align-items:center;
       background-color:white;
       color:#4E2A84;
       font-weight:600;
       position:sticky;
-      width:100vw;
       top:0;
-      height:5%;
-    padding-bottom:20px;
+    padding:0 20px;
     z-index:1;
   }
+
+
  
   .links{
       display:flex;
       flex-direction:row;
       list-style:none;
       justify-content: space-between;
-      width:30%;
-      margin:10px;
-      padding-right:20px;
-
-
   }
 
   .nav-link{
     text-decoration-line:none;
     font-size:1.3rem;
+    padding:5px;
     font-weight:600;
     color:#4E2A84;
-    padding:3px;
   }
 
   .nav-link:hover{
@@ -83,8 +79,8 @@
       justify-content:center;
       align-items:center;
       margin:0 auto;
-      height:50vh;
       padding:30px;
+      gap:100px;
       background-color: #4E2A84;
   }
 
@@ -124,7 +120,10 @@ padding:10px;
   }
 
   .description{
-      padding-left:80px;
+      display:flex;
+      flex-direction:column;
+      gap:10px;
+
   }
 
   #school{
@@ -137,6 +136,10 @@ padding:10px;
     font-size:20px;
     color:white;
     }
+
+  #full-bio{
+    width:100px;
+  }
     
 
 
