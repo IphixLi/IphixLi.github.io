@@ -5,3 +5,4 @@ function submitform() {
 function clearform(){
     document.forms["mail"].reset()
 }
+
