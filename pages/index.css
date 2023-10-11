@@ -14,7 +14,7 @@
     background-color: aquamarine;
     position: fixed;
     top: 0;
-    z-index: 1;
+    z-index: 0;
     width: 100%;
   }
   table {
@@ -23,6 +23,7 @@
     border-collapse: separate;
     overflow: scroll;
     overflow-x: auto;
+    z-index:1;
   }
   
   
