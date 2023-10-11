@@ -18,7 +18,7 @@
     width: 100%;
   }
   table {
-    margin-top:90px;
+    margin-top:120px;
     width: 100%; /* Ensure the table takes up the full width of the body */
     border-collapse: separate;
     overflow: scroll;
